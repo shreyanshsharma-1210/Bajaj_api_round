@@ -51,8 +51,8 @@ src/main/java/com/example/demo/
 {
   "is_success": true,
   "user_id": "shreyansh_sharma_12102005",
-  "email": "sharmashreyansh340@gmail.com",
-  "roll_number": "21BCE1210",
+  "email": "shreyanshsharma231224@acropolis.in",
+  "roll_number": "0827IT231130",
   "odd_numbers": ["1"],
   "even_numbers": ["334", "4"],
   "alphabets": ["A", "R"],
