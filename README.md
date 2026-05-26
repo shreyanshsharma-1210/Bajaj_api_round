@@ -50,7 +50,7 @@ src/main/java/com/example/demo/
 ```json
 {
   "is_success": true,
-  "user_id": "shreyansh_sharma_26052026",
+  "user_id": "shreyansh_sharma_12102005",
   "email": "sharmashreyansh340@gmail.com",
   "roll_number": "21BCE1210",
   "odd_numbers": ["1"],
@@ -73,7 +73,7 @@ src/main/java/com/example/demo/
 | Special chars | Any token that is not purely numeric or purely alphabetic |
 | Sum | Arithmetic sum of all numeric tokens, returned as string |
 | concat_string | All alpha chars concatenated → reversed → alternating caps (upper, lower, upper…) |
-| user_id | `{full_name}_{ddMMyyyy}` (today's date, auto-generated) |
+| user_id | Fixed DOB-based constant: `shreyansh_sharma_12102005` |
 
 ---
 
@@ -136,10 +136,9 @@ Test coverage includes:
 To change the user identity, edit `src/main/java/com/example/demo/util/Constants.java`:
 
 ```java
-public static final String FULL_NAME = "shreyansh_sharma";
+public static final String USER_ID = "shreyansh_sharma_12102005";
 public static final String EMAIL = "sharmashreyansh340@gmail.com";
 public static final String ROLL_NUMBER = "21BCE1210";
-public static final String USER_ID_DATE_FORMAT = "ddMMyyyy";
 ```
 
 ---
