@@ -130,8 +130,7 @@ class BFHLServiceImplTest {
         BFHLRequest request = new BFHLRequest(Collections.emptyList());
         BFHLResponse response = service.process(request);
 
-        assertThat(response.getUserId()).startsWith("shreyansh_sharma_");
-        assertThat(response.getUserId()).matches("shreyansh_sharma_\\d{8}");
+        assertThat(response.getUserId()).isEqualTo("shreyansh_sharma_12102005");
     }
 
     @Test

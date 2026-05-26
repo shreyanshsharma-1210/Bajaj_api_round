@@ -6,8 +6,6 @@ import com.example.demo.util.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,11 +48,10 @@ public class BFHLServiceImpl implements BFHLService {
         }
 
         String concatString = buildConcatString(allAlphabets.toString());
-        String userId = buildUserId();
 
         BFHLResponse response = BFHLResponse.builder()
                 .isSuccess(true)
-                .userId(userId)
+                .userId(Constants.USER_ID)
                 .email(Constants.EMAIL)
                 .rollNumber(Constants.ROLL_NUMBER)
                 .oddNumbers(oddNumbers)
@@ -65,7 +62,7 @@ public class BFHLServiceImpl implements BFHLService {
                 .concatString(concatString)
                 .build();
 
-        log.info("BFHL processing complete. userId={}, sum={}", userId, numericSum);
+        log.info("BFHL processing complete. userId={}, sum={}", Constants.USER_ID, numericSum);
         return response;
     }
 
@@ -110,8 +107,4 @@ public class BFHLServiceImpl implements BFHLService {
         return result.toString();
     }
 
-    private String buildUserId() {
-        String date = LocalDate.now().format(DateTimeFormatter.ofPattern(Constants.USER_ID_DATE_FORMAT));
-        return Constants.FULL_NAME + "_" + date;
-    }
 }

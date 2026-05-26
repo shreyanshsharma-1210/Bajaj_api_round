@@ -38,7 +38,7 @@ class BFHLControllerTest {
     void testPostBfhlSuccess() throws Exception {
         BFHLResponse mockResponse = BFHLResponse.builder()
                 .isSuccess(true)
-                .userId("shreyansh_sharma_26052026")
+                .userId("shreyansh_sharma_12102005")
                 .email("sharmashreyansh340@gmail.com")
                 .rollNumber("21BCE1210")
                 .oddNumbers(List.of("1"))
@@ -53,12 +53,13 @@ class BFHLControllerTest {
 
         BFHLRequest request = new BFHLRequest(Arrays.asList("a", "1", "334", "4", "R", "$"));
 
+
         mockMvc.perform(post("/bfhl")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success").value(true))
-                .andExpect(jsonPath("$.user_id").value("shreyansh_sharma_26052026"))
+                .andExpect(jsonPath("$.user_id").value("shreyansh_sharma_12102005"))
                 .andExpect(jsonPath("$.email").value("sharmashreyansh340@gmail.com"))
                 .andExpect(jsonPath("$.roll_number").value("21BCE1210"))
                 .andExpect(jsonPath("$.odd_numbers[0]").value("1"))
@@ -74,7 +75,7 @@ class BFHLControllerTest {
     void testPostBfhlEmptyData() throws Exception {
         BFHLResponse mockResponse = BFHLResponse.builder()
                 .isSuccess(true)
-                .userId("shreyansh_sharma_26052026")
+                .userId("shreyansh_sharma_12102005")
                 .email("sharmashreyansh340@gmail.com")
                 .rollNumber("21BCE1210")
                 .oddNumbers(Collections.emptyList())
